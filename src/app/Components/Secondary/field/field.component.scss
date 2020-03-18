@@ -1,0 +1,54 @@
+:host {
+  position: relative;
+}
+
+input {
+  margin: 10px 0;
+  padding: 20px;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-family: var(--secondaryFont);
+  background-color: var(--primaryLight);
+  border: 0;
+  border-radius: 10px;
+
+  box-shadow: none;
+
+  &:hover, &:focus {
+    box-shadow: 0 0 2px  var(--accent), 0 0 2px  var(--accent) inset;
+  }
+
+  &.hasBeenFocused:valid {
+    box-shadow: 0 0 2px  green, 0 0 2px  green inset;
+  }
+  &.hasBeenFocused:valid.error,
+  &.hasBeenFocused:invalid{
+    box-shadow: 0 0 2px  var(--accentSecondary), 0 0 2px  var(--accentSecondary) inset;
+  }
+
+  &::selection {
+    background-color: var(--accentHighlight);
+  }
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  margin-right: 10px;
+  padding: 0;
+
+  width: 30px;
+  height: 30px;
+
+  transform: translateY(-50%);
+
+  color: var(--text);
+  font-size: 1.1rem;
+  background-color: var(--primary);
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+}

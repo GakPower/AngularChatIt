@@ -1,0 +1,13 @@
+<nav>
+  <span id="logo">ChatIt</span>
+
+  <div id="menuButtons" >
+    <button routerLink="login" *ngIf="this.aut.auth.currentUser == null">Login</button>
+    <button routerLink="register" *ngIf="this.aut.auth.currentUser == null">Register</button>
+    <button (click)="logout()" *ngIf="this.aut.auth.currentUser != null">Logout</button>
+  </div>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

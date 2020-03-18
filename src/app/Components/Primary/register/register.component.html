@@ -1,0 +1,30 @@
+<div id="container">
+  <span id="title">Register</span>
+
+  <div id="form">
+    <app-field [placeholder]="'Display Name'" [type]="'text'" [value]="formData.name"
+               [check]="true" (valueChange)="formData.name = $event"
+               (state)="state.name = $event" (keyup.enter)="register()">
+    </app-field>
+    <app-field [placeholder]="'Email'" [type]="'email'" [value]="formData.email"
+               [check]="true" (valueChange)="formData.email = $event"
+               (state)="state.email = $event" (keyup.enter)="register()">
+    </app-field>
+    <app-field [placeholder]="'Password'" [type]="'password'" [value]="formData.password"
+               [confirmPass]="formData.confPassword" [minLength]="6" [check]="true"
+               (valueChange)="formData.password = $event" (state)="state.password = $event"
+               (keyup.enter)="register()">
+    </app-field>
+    <app-field [placeholder]="'Confirm Password'" [type]="'password'"  [value]="formData.confPassword"
+               [confirmPass]="formData.password" [minLength]="6" [check]="true"
+               (valueChange)="formData.confPassword = $event" (state)="state.confPassword = $event"
+               (keyup.enter)="register()">
+    </app-field>
+  </div>
+
+  <span id="error" [class.error]="error">{{error}}</span>
+
+  <div id="register">
+    <button (click)="register()" [disabled]="disabled">Register</button>
+  </div>
+</div>

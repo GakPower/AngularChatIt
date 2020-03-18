@@ -1,0 +1,18 @@
+<div id="container">
+  <span id="title">Login</span>
+
+  <div id="form">
+    <app-field [placeholder]="'Email'" [type]="'email'" [value]="email"
+               (valueChange)="email = $event" (keyup.enter)="login()">
+    </app-field>
+    <app-field [placeholder]="'Password'" [type]="'password'" [value]="pass"
+               (valueChange)="pass = $event" (keyup.enter)="login()">
+    </app-field>
+  </div>
+
+  <span id="error" [class.error]="error">Invalid credentials</span>
+
+  <div id="login">
+    <button (click)="login()" [disabled]="disabled">Login</button>
+  </div>
+</div>

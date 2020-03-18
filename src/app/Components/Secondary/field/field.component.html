@@ -1,0 +1,2 @@
+<input [value]="value" #input (keyup)="valueChange.emit(input.value)" [className]="hasEverBeenFocused ? 'hasBeenFocused' : ''" [class.error]="lessThanMin || notEmail || passNotMatch" placeholder="{{placeholder}}" type="{{typeTemp}}" required="{{typeTemp}}" (focus)="onFocus()">
+<button *ngIf="type == 'password'" (click)="typeTemp = typeTemp == 'password' ? 'text' : 'password'" tabindex="-1">{{typeTemp == 'password' ? 'S' : 'H'}}</button>

@@ -1,0 +1,82 @@
+::ng-deep :root {
+  --primaryFont: 'Lobster', cursive;
+  --secondaryFont: 'Josefin Sans', sans-serif;
+
+  --primary: #2a2b2a;
+  --primaryLight: #313231;
+  --primaryDisabled: #454645;
+  --secondary: #706c61;
+  --accent: #ff8966;
+  --accentHighlight: rgba(255, 137, 102, 0.31);
+  --accentSecondary: #e5446d;
+  --text: #918d7b;
+  //--text: #f8f4e3;
+
+  --error: #a60000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 70px;
+
+  background-color: var(--primary);
+
+  #logo {
+    margin-left: 10px;
+
+    color: var(--accent);
+    font-family: var(--primaryFont);
+    font-size: 3rem;
+  }
+
+  #menuButtons {
+
+    button {
+      padding: 10px;
+      margin: 5px;
+
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-family: var(--secondaryFont);
+
+      border: 0;
+      background-color: var(--primary);
+
+      cursor: pointer;
+    }
+  }
+}
+
+main {
+  &:last-child {
+    display: inline-block;
+
+    width: 100%;
+    height: calc(100% - 70px);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  nav {
+    #logo {
+      font-size: 2rem;
+    }
+
+    #menuButtons {
+      button {
+        margin: 2px;
+        padding: 5px;
+
+        font-size: 1rem;
+      }
+    }
+  }
+}
