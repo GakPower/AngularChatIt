@@ -1,5 +1,54 @@
-p {
+#container {
+  width: 99%;
+  height: 99%;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  margin: auto;
+  display: grid;
+  grid-template-rows: auto 50px;
+}
+#container #messages {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  overflow-y: auto;
+}
+#container #messages span {
+  color: whitesmoke;
+  font-family: var(--secondaryFont);
+  font-size: 1.1rem;
+  padding: 10px;
+  margin: 2px 5px;
+  background-color: #007c7c;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+#container #messages span.fromMe {
+  background-color: var(--accent);
+  text-align: right;
+}
+#container #sendingBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container #sendingBar input {
+  padding: 10px;
+  width: 80%;
   color: var(--text);
+  font-family: var(--secondaryFont);
+  background-color: var(--primary);
+  border-radius: 5px;
+  border: 0;
+}
+#container #sendingBar svg {
+  padding: 5px;
+  margin-left: 5px;
+  border: 0;
+  cursor: pointer;
+}
+#container #sendingBar svg #original-icon {
+  fill: var(--accent);
 }
 
 /*# sourceMappingURL=chat.component.css.map */

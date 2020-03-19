@@ -36,6 +36,10 @@
 #container #error.error {
   opacity: 1;
 }
+#container #error.success {
+  color: green;
+  opacity: 1;
+}
 #container #register {
   display: flex;
   align-items: center;

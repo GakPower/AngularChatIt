@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
   };
 
   error = '';
+  success = false;
   disabled = false;
 
   constructor(private aut: AngularFireAuth,
@@ -58,7 +59,6 @@ export class RegisterComponent implements OnInit {
               displayName: this.formData.name
             });
             this.router.navigate(['/login']);
-            this.resetField();
           })
           .catch(reason => {
             this.error = reason.message;

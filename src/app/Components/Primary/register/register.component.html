@@ -22,7 +22,7 @@
     </app-field>
   </div>
 
-  <span id="error" [class.error]="error">{{error}}</span>
+  <span id="error" [class.error]="error" [class.success]="success">{{error}}</span>
 
   <div id="register">
     <button (click)="register()" [disabled]="disabled">Register</button>
