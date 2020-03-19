@@ -1,6 +1,7 @@
 #container {
   width: 99%;
   height: 99%;
+  max-width: 500px;
   border: 1px solid var(--accent);
   border-radius: 10px;
   margin: auto;
@@ -13,19 +14,43 @@
   margin-top: 5px;
   overflow-y: auto;
 }
-#container #messages span {
+#container #messages > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 5px 0 5px 5px;
+}
+#container #messages > div #sender {
+  color: var(--text);
+  font-family: var(--secondaryFont);
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+#container #messages > div #message {
   color: whitesmoke;
   font-family: var(--secondaryFont);
   font-size: 1.1rem;
   padding: 10px;
-  margin: 2px 5px;
+  max-width: 80%;
   background-color: #007c7c;
   border-radius: 5px;
   word-wrap: break-word;
 }
-#container #messages span.fromMe {
+#container #messages > div.showSender {
+  margin: 0 0 5px 5px;
+}
+#container #messages > div.showSender #sender {
+  display: none;
+}
+#container #messages > div.fromMe {
+  align-items: flex-end;
+  margin: 5px 5px 2px 0;
+}
+#container #messages > div.fromMe #sender {
+  display: none;
+}
+#container #messages > div.fromMe #message {
   background-color: var(--accent);
-  text-align: right;
 }
 #container #sendingBar {
   display: flex;
@@ -49,6 +74,13 @@
 }
 #container #sendingBar svg #original-icon {
   fill: var(--accent);
+}
+
+@media only screen and (min-width: 500px) {
+  #container {
+    margin: 20px auto;
+    height: 80%;
+  }
 }
 
 /*# sourceMappingURL=chat.component.css.map */

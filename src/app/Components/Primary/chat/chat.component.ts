@@ -1,4 +1,4 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {AngularFirestore} from '@angular/fire/firestore';
@@ -9,6 +9,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  @ViewChild('messagesDiv', {static: false}) messagesDiv: any;
 
   loggedInUser: firebase.User = null;
 
@@ -37,6 +38,7 @@ export class ChatComponent implements OnInit {
             this.messages.push(result.data());
           });
         });
+        this.scrollToTheBottom();
       });
   }
 
@@ -45,7 +47,8 @@ export class ChatComponent implements OnInit {
       const data = {
         message: this.message,
         sender: this.loggedInUser.displayName,
-        time: new Date()
+        time: new Date(),
+        showSender: this.messages.length > 0 && (this.loggedInUser.displayName === this.messages[this.messages.length - 1].sender)
       };
       this.messages.push(data);
       this.message = '';
@@ -56,8 +59,8 @@ export class ChatComponent implements OnInit {
     }
   }
 
-  scrollToTheBottom(divElement) {
-    divElement.scrollTop = divElement.scrollHeight;
+  scrollToTheBottom() {
+    this.messagesDiv.nativeElement.scrollTop = this.messagesDiv.nativeElement.scrollHeight;
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 #container {
   width: 99%;
   height: 99%;
+  max-width: 500px;
 
   border: 1px solid var(--accent);
   border-radius: 10px;
@@ -17,22 +18,51 @@
 
     overflow-y: auto;
 
-    span {
-      color: whitesmoke;
-      font-family: var(--secondaryFont);
-      font-size: 1.1rem;
-      padding: 10px;
-      margin: 2px 5px;
+    &> div {
+      display: flex;
+      flex-direction: column;
 
-      background-color: #007c7c;
+      align-items: flex-start;
+      margin: 5px 0 5px 5px;
 
-      border-radius: 5px;
+      #sender {
+        color: var(--text);
+        font-family: var(--secondaryFont);
+        font-size: .8rem;
+        margin-bottom: 2px;
+      }
+      #message {
+        color: whitesmoke;
+        font-family: var(--secondaryFont);
+        font-size: 1.1rem;
+        padding: 10px;
 
-      word-wrap: break-word;
+        max-width: 80%;
+
+        background-color: #007c7c;
+
+        border-radius: 5px;
+
+        word-wrap: break-word;
+      }
     }
-    span.fromMe {
-      background-color: var(--accent);
-      text-align: right;
+    &> div.showSender {
+      margin: 0 0 5px 5px;
+      #sender {
+        display: none;
+      }
+    }
+    &> div.fromMe {
+      align-items: flex-end;
+      margin: 5px 5px 2px 0;
+
+      #sender {
+        display: none;
+      }
+
+      #message {
+        background-color: var(--accent);
+      }
     }
   }
 
@@ -62,5 +92,12 @@
         fill: var(--accent);
       }
     }
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  #container {
+    margin: 20px auto;
+    height: 80%;
   }
 }
