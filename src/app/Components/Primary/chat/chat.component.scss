@@ -1,6 +1,6 @@
 #container {
   width: 99%;
-  height: 99%;
+  height: 98%;
   max-width: 500px;
 
   border: 1px solid var(--accent);
@@ -23,13 +23,32 @@
       flex-direction: column;
 
       align-items: flex-start;
-      margin: 5px 0 5px 5px;
+      margin: 0 5px 5px 5px;
 
+      &:hover {
+        #time {
+          display: block;
+        }
+      }
+
+      #dateBanner {
+        align-self: center;
+
+        color: var(--secondary);
+        font-size: .9rem;
+        font-family: var(--secondaryFont);
+      }
       #sender {
+        display: none;
         color: var(--text);
         font-family: var(--secondaryFont);
         font-size: .8rem;
-        margin-bottom: 2px;
+      }
+      #time {
+        display: none;
+        color: var(--text);
+        font-family: var(--secondaryFont);
+        font-size: .7rem;
       }
       #message {
         color: whitesmoke;
@@ -45,23 +64,25 @@
 
         word-wrap: break-word;
       }
-    }
-    &> div.showSender {
-      margin: 0 0 5px 5px;
-      #sender {
-        display: none;
-      }
-    }
-    &> div.fromMe {
-      align-items: flex-end;
-      margin: 5px 5px 2px 0;
 
-      #sender {
-        display: none;
+      &.showSender {
+        margin: 5px 5px 5px 5px;
+        #sender {
+          display: block;
+        }
+        #time {
+          display: block;
+        }
       }
+      &.fromMe {
+        align-items: flex-end;
 
-      #message {
-        background-color: var(--accent);
+        #sender {
+          display: none;
+        }
+        #message {
+          background-color: var(--accent);
+        }
       }
     }
   }

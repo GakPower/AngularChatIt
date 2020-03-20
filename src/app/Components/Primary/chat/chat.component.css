@@ -1,6 +1,6 @@
 #container {
   width: 99%;
-  height: 99%;
+  height: 98%;
   max-width: 500px;
   border: 1px solid var(--accent);
   border-radius: 10px;
@@ -18,13 +18,28 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 5px 0 5px 5px;
+  margin: 0 5px 5px 5px;
+}
+#container #messages > div:hover #time {
+  display: block;
+}
+#container #messages > div #dateBanner {
+  align-self: center;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  font-family: var(--secondaryFont);
 }
 #container #messages > div #sender {
+  display: none;
   color: var(--text);
   font-family: var(--secondaryFont);
   font-size: 0.8rem;
-  margin-bottom: 2px;
+}
+#container #messages > div #time {
+  display: none;
+  color: var(--text);
+  font-family: var(--secondaryFont);
+  font-size: 0.7rem;
 }
 #container #messages > div #message {
   color: whitesmoke;
@@ -37,14 +52,16 @@
   word-wrap: break-word;
 }
 #container #messages > div.showSender {
-  margin: 0 0 5px 5px;
+  margin: 5px 5px 5px 5px;
 }
 #container #messages > div.showSender #sender {
-  display: none;
+  display: block;
+}
+#container #messages > div.showSender #time {
+  display: block;
 }
 #container #messages > div.fromMe {
   align-items: flex-end;
-  margin: 5px 5px 2px 0;
 }
 #container #messages > div.fromMe #sender {
   display: none;
