@@ -13,6 +13,7 @@ input {
   border-radius: 10px;
 
   box-shadow: none;
+  outline: 0;
 
   &:hover, &:focus {
     box-shadow: 0 0 2px  var(--accent), 0 0 2px  var(--accent) inset;
